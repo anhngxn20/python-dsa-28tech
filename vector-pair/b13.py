@@ -13,6 +13,26 @@
 # Đầu ra
 # In ra bảng số sau khi lật ngược từng dòng
 
+def nhap(v, n, m):
+    v = [[0 for _ in range(m)] for _ in range(n)]
+    for i in range(n):
+        v[i] = list(map(int, input().split()))
+    return v
+
+def xuat(v, n, m):
+    for i in range(n):
+        for j in range(m):
+            print(v[i][j], end=' ')
+        print()
+
+def lat(v, n, m):
+    for i in range(n):
+        v[i].reverse()
+    return v
+
 if __name__ == "__main__":
+    v = []
     n,m = map(int, input().split())
-    
+    v = nhap(v, n, m)
+    v = lat(v, n, m)
+    xuat(v, n, m)
